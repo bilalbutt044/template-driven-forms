@@ -1,0 +1,54 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h3>Angular 6 Template-Driven Form Validation</h3>
+        <form name="form" (ngSubmit)="onSubmit(f.value)" #f="ngForm" novalidate>
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text"
+                   class="form-control"
+                   name="username"
+                   #userName
+                   required
+                   minlength="8"/>
+            <div *ngIf="username.invalid && username.touched" class="invalid-feedback">
+              <div *ngIf="username.errors.required" class="alert alert-danger">Username is required</div>
+              <div *ngIf="username.errors.minlength" class="alert alert-danger">length should b 8 character</div>
+            </div>
+          </div>
+          <!--<div class="form-group">-->
+            <!--<label for="email">Email:</label>-->
+            <!--<input type="email"-->
+                   <!--class="form-control"-->
+                   <!--name="email"-->
+                   <!--[(ngModel)] = 'model.email'-->
+                   <!--#email = 'ngModel'-->
+                   <!--required email-->
+                   <!--/>-->
+            <!--<div *ngIf="f.submitted && email.invalid" class="invalid-feedback">-->
+              <!--<div *ngIf="email.errors.required" class="alert alert-danger">Email is required</div>-->
+              <!--<div *ngIf="email.errors.email" class="alert alert-danger">email not in required format</div>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="form-group">-->
+            <!--<label for="password">Password:</label>-->
+            <!--<input type="password"-->
+                   <!--class="form-control"-->
+                   <!--name="password"-->
+                   <!--[(ngModel)] = 'model.password'-->
+                   <!--#password = 'ngModel'-->
+                   <!--required-->
+                   <!--minlength="8"/>-->
+            <!--<div *ngIf="f.submitted && password.invalid" class="invalid-feedback">-->
+              <!--<div *ngIf="password.errors.required" class="alert alert-danger">Password is required</div>-->
+              <!--<div *ngIf="password.errors.minlength" class="alert alert-danger">length should b 8 character</div>-->
+            <!--</div>-->
+          <!--</div>-->
+            <button class="btn btn-primary" >Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
